@@ -1,7 +1,7 @@
 'use strict'
 /* função que armazena todos os produtos relativos a marca */
 const searchByBrand = async (brand) => {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -10,7 +10,7 @@ const searchByBrand = async (brand) => {
 
 /* função que armazena todos os produtos */
 const allFromMakeup = async () => {
-    const url = 'http://makeup-api.herokuapp.com/api/v1/products.json'
+    const url = 'https://makeup-api.herokuapp.com/api/v1/products.json'
     const response = await fetch(url)
     const data = await response.json()
 
