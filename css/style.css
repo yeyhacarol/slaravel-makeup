@@ -30,6 +30,21 @@ header {
     object-fit: cover;
 }
 
+.previous {
+    position: absolute;
+    top: 537px;
+    display: flex;
+    gap: 18px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 .caroussel h1 {
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: clamp(3rem, 10vw, 8rem);
@@ -221,4 +236,8 @@ footer {
 footer span {
     font-size: clamp(1.3rem, 2vw, 2rem);
     margin-bottom: 14px;
+}
+
+@media screen and (max-widht: 720px) {
+    
 }

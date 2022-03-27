@@ -1,7 +1,7 @@
 'use strict'
 /* função que armazena todos os produtos relativos a marca */
 const searchByBrand = async (brand) => {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -10,7 +10,7 @@ const searchByBrand = async (brand) => {
 
 /* função que armazena todos os produtos */
 const allFromMakeup = async () => {
-    const url = 'http://makeup-api.herokuapp.com/api/v1/products.json'
+    const url = 'https://makeup-api.herokuapp.com/api/v1/products.json'
     const response = await fetch(url)
     const data = await response.json()
 
@@ -68,8 +68,6 @@ const loadCard = async (productType, urlType) => {
     const tagCards = cards.map(creatingCard)
 
     container.replaceChildren(...tagCards)
-
-    console.log(productType)
 }
 
 /* função que armazena todos os itens, para posteriormente serem filtrados por marca para podermos inseri-las no datalist */
@@ -88,6 +86,7 @@ const loadingBrand = async () => {
 
     list.innerHTML = lista
 }
+
 
 /* resgatando os links, adicionando um evento de click e chamando uma função que carrega os cards, passando coomo parâmetro o tipo de produto e o final da url que é correspondente ao produto */
 document.getElementById('pele').addEventListener('click', function () {
@@ -108,3 +107,54 @@ document.getElementById('unhas').addEventListener('click', function () {
 
 document.getElementById('search').addEventListener('click', loadindCardByBrand)
 loadingBrand()
+
+/* carrossel */
+const background = document.getElementById('background')
+const firstImage = document.getElementById('first-image')
+const secondImage = document.getElementById('second-image')
+const thirdImage = document.getElementById('third-image')
+let idImage = null
+let image = 1
+
+const imageOne = () => background.src = './img/background-home.png'
+const imageTwo = () => background.src = './img/background-home1.png'
+const imageThree = () => background.src = './img/background-home2.png'
+const automaticoLigado = () => idImage != null
+
+const imageAuto = () => {
+    if (image == 1) {
+        imageOne()
+        image++
+    } else if (image == 2) {
+        imageTwo()
+        image++
+    } else if (image == 3) {
+        imageThree()
+        image = 1
+    }
+}
+
+const changeImages = () => {
+    if (idImage == null) {
+        idImage = setInterval(imageAuto, 1500)
+        
+    } else {
+        clearInterval(idImage)
+        idImage = null
+    }
+}
+
+
+firstImage.addEventListener('click', () => {
+    imageOne()
+})
+
+secondImage.addEventListener('click', () => {
+    imageTwo()
+})
+
+thirdImage.addEventListener('click', () => {
+    imageThree()
+})
+
+changeImages()
