@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="./js/main.js" defer></script>
     <title>SLARAVEL MAKEUP</title>
 </head>
 
@@ -24,31 +26,30 @@
                 </div>
             </div>
             <div class="product-types">
-                <span>PELE</span>
-                <span>LÁBIOS</span>
-                <span>OLHOS</span>
-                <span>SOBRANCELHA</span>
-                <span>UNHAS</span>
+                <span><a href="#" id="pele">PELE</a></span>
+                <span><a href="#" id="labios">LÁBIOS</a></span>
+                <span><a href="#" id="olhos">OLHOS</a></span>
+                <span><a href="#" id="sobrancelha">SOBRANCELHA</a></span>
+                <span><a href="#" id="unhas">UNHAS</a></span>
+
+                <div class="search-area">
+                    <input class="input-field" type="text" placeholder="marca, produto" id="brand" list="brand-list">
+                    <datalist id="brand-list"></datalist>
+                    <button id="search"><img src="./img/search.png" class="icon" alt=""></button>
+                </div>
             </div>
-            <input type="search" class="search-product" placeholder="MARCA, PRODUTO">
-            <img src="img/search.png" alt="">
         </div>
     </header>
 
-    <div class="line"></div>
+    <div class="header-separator"></div>
 
     <section id="products">
-        <div class="products-container">
-            <div class="card">
-                <img src="img/make.png" alt="">
-                <span>nyx</span>
-                <span>Baked Brush</span>
-                <span>R$ 7.00</span>
-            </div>
+        <div id="products-content">
+            
         </div>
     </section>
 
-    <div class="line"></div>
+    <div class="footer-separator"></div>
 
     <footer>
         <span>Slaravel, a marca criada apenas para fins estudantis</span>
