@@ -81,7 +81,7 @@ const loadingBrand = async () => {
         lista +=
             `<option>
             ${brand}
-        </option>`
+            </option>`
     })
 
     list.innerHTML = lista
@@ -119,42 +119,35 @@ let image = 1
 const imageOne = () => background.src = './img/background-home.png'
 const imageTwo = () => background.src = './img/background-home1.png'
 const imageThree = () => background.src = './img/background-home2.png'
-const automaticoLigado = () => idImage != null
+const autoOn = () => idImage != null
 
 const imageAuto = () => {
     if (image == 1) {
         imageOne()
+        thirdImage.style.backgroundColor = 'WHITE'
+        firstImage.style.backgroundColor = '#DF5959'
         image++
     } else if (image == 2) {
         imageTwo()
         image++
+        firstImage.style.backgroundColor = 'WHITE'
+        secondImage.style.backgroundColor = '#DF5959'
     } else if (image == 3) {
         imageThree()
         image = 1
+        secondImage.style.backgroundColor = 'WHITE'
+        thirdImage.style.backgroundColor = '#DF5959'
     }
 }
 
 const changeImages = () => {
     if (idImage == null) {
-        idImage = setInterval(imageAuto, 1500)
+        idImage = setInterval(imageAuto, 2000)
         
     } else {
         clearInterval(idImage)
         idImage = null
     }
 }
-
-
-firstImage.addEventListener('click', () => {
-    imageOne()
-})
-
-secondImage.addEventListener('click', () => {
-    imageTwo()
-})
-
-thirdImage.addEventListener('click', () => {
-    imageThree()
-})
 
 changeImages()

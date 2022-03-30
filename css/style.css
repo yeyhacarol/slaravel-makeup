@@ -10,7 +10,7 @@
 /* header */
 header {
     width: 100%;
-    height: 677px;
+    min-height: 677px;
 }
 
 .caroussel {
@@ -42,7 +42,6 @@ header {
     height: 20px;
     background-color: #fff;
     border-radius: 50%;
-    cursor: pointer;
 }
 
 .caroussel h1 {
@@ -89,7 +88,7 @@ a::after{
     background-color: #000;
     transform-origin: bottom center;
     transition: transform 0.25s ease-out;
-    }
+}
 
 a:hover::after{
     transform: scaleX(1);
@@ -99,7 +98,6 @@ a:hover::after{
 .search-area {
     max-width: 400px;
     min-width: 250px;
-    height: 60px;
 
     display: flex;
 }
@@ -155,16 +153,16 @@ button {
 }
 
 #products-content {
-    width: 50%;
+    width: 70%;
     height: inherit;
 }
 
 .card {
-    width: 300px;
+    width: 250px;
     height: 430px;
 
     float: left;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding-top: 15px;
 
     margin-right: 15px;
@@ -238,6 +236,41 @@ footer span {
     margin-bottom: 14px;
 }
 
-@media screen and (max-widht: 720px) {
+@media screen and (max-width: 720px) {
+    .product-types {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .product-types span {
+        margin-bottom: 15px;
+    }
+
+    .product-types span:nth-last-child(2) {
+        flex-grow: 0;
+    }
+
+    .search-area {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     
+    .input-field {
+        width: 220px;
+        height: 50px;
+
+        font-size: 1.2rem;
+    }
+    
+    .icon, button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #products-content {
+        width: 70%;
+    }
+
 }
