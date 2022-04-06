@@ -1,4 +1,5 @@
 'use strict'
+
 /* função que armazena todos os produtos relativos a marca */
 const searchByBrand = async (brand) => {
     const url = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
@@ -84,7 +85,7 @@ const loadingBrand = async () => {
             </option>`
     })
 
-    list.innerHTML = lista
+   list.innerHTML = lista
 }
 
 
@@ -99,7 +100,7 @@ document.getElementById('olhos').addEventListener('click', function () {
     loadCard('olhos', ['eyeliner', 'eyeshadow', 'mascara'])
 })
 document.getElementById('sobrancelha').addEventListener('click', function () {
-    loadCard('sobrancelha', ['eyebrown'])
+    loadCard('sobrancelha', ['eyebrow'])
 })
 document.getElementById('unhas').addEventListener('click', function () {
     loadCard('unhas', ['nail_polish'])
@@ -150,4 +151,12 @@ const changeImages = () => {
     }
 }
 
+//função para mostrar símbolo de carregamento enquanto o datalist não ficar pronto
+const load = () => {
+    $(window).load(function () {
+        $(".se-pre-con").fadeToggle(8500);;
+    });
+}
+
+load()
 changeImages()
