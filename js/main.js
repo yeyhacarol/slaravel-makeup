@@ -88,6 +88,8 @@ const loadingBrand = async () => {
    list.innerHTML = lista
 }
 
+console.log(allFromMakeup)
+
 
 /* resgatando os links, adicionando um evento de click e chamando uma função que carrega os cards, passando coomo parâmetro o tipo de produto e o final da url que é correspondente ao produto */
 document.getElementById('pele').addEventListener('click', function () {
@@ -102,9 +104,7 @@ document.getElementById('olhos').addEventListener('click', function () {
 document.getElementById('sobrancelha').addEventListener('click', function () {
     loadCard('sobrancelha', ['eyebrow'])
 })
-document.getElementById('unhas').addEventListener('click', function () {
-    loadCard('unhas', ['nail_polish'])
-})
+document.getElementById('unhas').addEventListener('click', () => loadCard('unhas', ['nail_polish']))
 
 document.getElementById('search').addEventListener('click', loadindCardByBrand)
 loadingBrand()
