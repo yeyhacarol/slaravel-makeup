@@ -234,6 +234,8 @@ footer {
 footer span {
     font-size: clamp(1.3rem, 2vw, 2rem);
     margin-bottom: 14px;
+
+    text-align: center;
 }
 
 .se-pre-con {
