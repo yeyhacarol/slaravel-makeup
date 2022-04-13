@@ -151,12 +151,4 @@ const changeImages = () => {
     }
 }
 
-//função para mostrar símbolo de carregamento enquanto o datalist não ficar pronto
-const load = () => {
-    $(window).load(function () {
-        $(".se-pre-con").fadeToggle(8500);;
-    });
-}
-
-load()
 changeImages()
